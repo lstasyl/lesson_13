@@ -31,10 +31,17 @@ class Group:
         self.group.add(student)
 
     def delete_student(self, last_name):
-        pass
+        for student in self.group:
+            if student.last_name == last_name:
+                self.group.remove(student)
+                return student
+        return None
 
     def find_student(self, last_name):
-        pass
+        for student in self.group:
+            if student.last_name == last_name:
+                return student
+        return None
 
     def __str__(self):
         all_students = ''
